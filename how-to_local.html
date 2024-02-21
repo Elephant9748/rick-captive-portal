@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    <title>How To Connect Phoebe-id</title>
+    <title>⚡🚧 Langkah Menghubungkan wifi Phoebe-id</title>
     <style>
       body {
         /*
@@ -49,16 +49,47 @@
         position:fixed;
         width:40px;
         height:40px;
-        bottom:40px;
+        bottom:50px;
         left:15px;
         background-color:#232327;
-        border-radius:50px;
+        border-radius:20px;
         text-align:center;
         box-shadow: 1px 1px 3px #18181A;
       }
 
       .my-float {
         margin-top:22px;
+      }
+
+      .back {
+        font-size: 14px;
+        font-family: Arial, sans-serif;
+        font-weight: 700;
+        height: 36px;
+        padding: 0 8px;
+      }
+
+      .back-button {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border: 0;
+        color: #fff;
+        text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+        background-color: #232327;
+      }
+
+      .back-button:hover {
+        border: 0;
+        text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+        background-color: #1F2125;
+      }
+
+      label {
+        font-size:35px;
+        position:fixed;
+        bottom:50px;
+        left:18px;
       }
 
       @media only screen and (min-device-width: 320px) and (max-device-width: 767px) {
@@ -90,7 +121,7 @@
   </head>
   <body>
     <div class="center">
-      <h3>⚡🚧 Langkah connect wifi Phoebe-id</h3>
+      <h3>⚡🚧 Langkah Menghubungkan wifi Phoebe-id</h3>
       <ul>
               <li class="step">
                       1.
@@ -183,7 +214,7 @@
                       <img src="assets/wifi-step/step9.png" alt="step10">
               </li>
       </ul>
-      <a href="#" class="float" onclick="goBack()"><i class="my-float fix-pos">&#8592;</i></a>
+      <button class="back back-button float" onclick="goBack()"><label>&#8592;<label></button>
       <script>
               function goBack() {
                       window.history.back();
