@@ -217,6 +217,22 @@
         font-size: 14px;
       }
 
+      .error {
+        font-size: 14px;
+        font-family: Arial, sans-serif;
+        font-weight: 700;
+        height: 25px;
+        padding: 0 8px;
+        padding-top: 10px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border: 0;
+        color: #fff;
+        text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+        background-color: #ff1215;
+      }
+
       /*
       input[type="checkbox"] {
         -webkit-box-flex: 0;
@@ -237,6 +253,11 @@
         }
       }
     </style>
+    <script>
+      setTimeout(function () {
+        document.getElementById("error").remove();
+      }, 4000);
+    </script>
   </head>
 
   <body>
@@ -244,9 +265,8 @@
       <div class="login-card">
         <img src="captiveportal-logo.png" /><br />
         <h1></h1>
-        <p><a style="font-size:12px;opacity:1;color:#5EB220;font-weight:600;" href="captiveportal-price-to.html">⚡ Price</a></p>
-        <p><a style="font-size:12px;opacity:1;color:#d02952;font-weight:600;" href="captiveportal-how-to.html">⚡ Tutorial To Connect?</a></p>
-        <p style="font-size:12px;">🚧 Login <i>with:</i> </p>
+        <p><a style="font-size:12px;opacity:1;color:#d02952;font-weight:600;" href="captiveportal-how-to.html">Tutorial To Connect?</a></p>
+        <p style="font-size:12px;">Login <i>with:</i> </p>
         <button id="button_voucher" class="voucher voucher-button">Voucher</button>
         <button id="button_user" class="user user-button">User</button>
         <script>
@@ -319,7 +339,7 @@
           />
         </form>
         </div>
-
+        <p class="error" id="error">Your were logged out.</p>
         <div class="footer">Welcome <i>to</i> &#9829; <b>Phoebe-id</b></div>
       </div>
     </div>
