@@ -110,6 +110,58 @@
         background-color: #357ae8;
       }
 
+      .voucher {
+        font-size: 14px;
+        font-family: Arial, sans-serif;
+        font-weight: 700;
+        height: 36px;
+        padding: 0 8px;
+      }
+
+      .voucher-button {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border: 0;
+        color: #fff;
+        text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+        background-color: #4d90fe;
+      }
+
+      .voucher-button:hover {
+        border: 0;
+        text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+        background-color: #357ae8;
+      }
+
+      .user {
+        font-size: 14px;
+        font-family: Arial, sans-serif;
+        font-weight: 700;
+        height: 36px;
+        padding: 0 8px;
+      }
+
+      .user-button {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border: 0;
+        color: #fff;
+        text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+        background-color: #4d90fe;
+      }
+
+      .user-button:hover {
+        border: 0;
+        text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+        background-color: #357ae8;
+      }
+
+      #form_voucher, #form_user {
+        display: none;
+      }
+
       /*
       .login-submit {
         -webkit-appearance: none;
@@ -192,22 +244,41 @@
       <div class="login-card">
         <img src="captiveportal-logo.png" /><br />
         <h1></h1>
+        <p><a style="font-size:12px;opacity:1;color:#d02952;font-weight:600;" href="captiveportal-how-to.html">How to connect?</a></p>
+        <p style="font-size:12px;">Login <i>with:</i> </p>
+        <button id="button_voucher" class="voucher voucher-button">Voucher</button>
+        <button id="button_user" class="user user-button">User</button>
+        <script>
+                const btn_voucher = document.getElementById('button_voucher');
+                const btn_user = document.getElementById('button_user');
+
+                btn_voucher.addEventListener('click', () => {
+                        const state = document.getElementById('form_voucher');
+                        const state2 = document.getElementById('form_user');
+                        if (state.style.display === 'block') {
+                                state.style.display = 'none';
+                                state2.style.display = 'block';
+                        } else {
+                                state.style.display = 'block';
+                                state2.style.display = 'none';
+                        }
+                });
+                btn_user.addEventListener('click', () => {
+                        const state = document.getElementById('form_user');
+                        const state2 = document.getElementById('form_voucher');
+                        if (state.style.display === 'block') {
+                                state.style.display = 'none';
+                                state2.style.display = 'block';
+                        } else {
+                                state.style.display = 'block';
+                                state2.style.display = 'none';
+                        }
+                });
+        </script>
+        <div><br></div>
+
+        <div id="form_user">
         <form name="login_form" method="post" action="$PORTAL_ACTION$">
-          <input
-            type="button"
-            name="vouchertype"
-            value="Voucher"
-            class="login login-button"
-            onclick="document.getElementById('auth_voucher').disabled = !this.checked;"
-          />
-          <input
-            type="button"
-            name="usertype"
-            value="User"
-            class="login login-button"
-            onclick="document.getElementById('auth_user').disabled = !this.checked;document.getElementById('auth_pass').disabled = !this.checked;"
-          />
-          <div><br></div>
           <input
             type="text"
             name="auth_user"
@@ -220,40 +291,21 @@
             placeholder="Password"
             id="auth_pass"
           />
-         <!--
-          <div class="login-help">
-            <ul class="list">
-              <li class="list__item">
-                <label class="label--checkbox">
-                  <input
-                    type="checkbox"
-                    class="checkbox"
-                    onchange="document.getElementById('login').disabled = !this.checked;"
-                  />
-                  <span
-                    >I agree with the
-                    <a
-                      target="_blank"
-                      rel="noopener"
-                      href="http://www.termslicences.com/example.pdf"
-                      >terms & licences</a
-                    ></span
-                  >
-                </label>
-              </li>
-            </ul>
-          </div>
-         <input name="redirurl" type="hidden" value="$PORTAL_REDIRURL$" /> 
-         <input name="redirurl" value="$PORTAL_REDIRURL$" />
+         <input name="redirurl" type="hidden" value="$PORTAL_REDIRURL$" />
+         <!-- <input id="auth_voucher" name="auth_voucher" type="text" placeholder="Voucher"> -->
+         <input name="zone" type="hidden" value="$PORTAL_ZONE$">
           <input
             type="submit"
             name="accept"
-            class="login login-submit"
+            class="login login-button"
             value="Login"
             id="login"
-            disabled
           />
-         -->
+        </form>
+        </div>
+
+        <div id="form_voucher">
+        <form name="login_form" method="post" action="$PORTAL_ACTION$">
          <input name="redirurl" type="hidden" value="$PORTAL_REDIRURL$" />
          <input id="auth_voucher" name="auth_voucher" type="text" placeholder="Voucher">
          <input name="zone" type="hidden" value="$PORTAL_ZONE$">
@@ -265,6 +317,8 @@
             id="login"
           />
         </form>
+        </div>
+
         <div class="footer">Welcome <i>to</i> &#9829; <b>Phoebe-id</b></div>
       </div>
     </div>
