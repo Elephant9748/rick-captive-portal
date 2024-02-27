@@ -103,6 +103,7 @@
         background-color: #000000;
         border: 1px solid #000000;
         border-radius: 5px;
+        margin-top:25px;
       }
 
       .login-button:hover {
@@ -356,6 +357,7 @@
 
         <div id="form_user">
           <form name="login_form" method="post" action="$PORTAL_ACTION$">
+            <p>Insert Account Below :</p>
             <input
               type="text"
               name="auth_user"
@@ -383,6 +385,7 @@
 
         <div id="form_voucher">
           <form name="login_form" method="post" action="$PORTAL_ACTION$">
+            <p>Insert Voucher Below :</p>
             <input name="redirurl" type="hidden" value="$PORTAL_REDIRURL$" />
             <input
               id="auth_voucher"
