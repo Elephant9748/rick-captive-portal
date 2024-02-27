@@ -40,10 +40,10 @@
       .login-card {
         padding: 40px;
         width: 274px;
-        background-color: #f7f7f7;
+        background-color: #FFFFFF;
         margin: 0 auto 10px;
         border-radius: 2px;
-        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 5px 10px  rgba(0, 0, 0, 0.12);
         overflow: hidden;
       }
       .login-card h1 {
@@ -101,13 +101,18 @@
         border: 0;
         color: #fff;
         text-shadow: 0 1px rgba(0, 0, 0, 0.1);
-        background-color: #4d90fe;
+        background-color: #000000;
+        border:1px solid #000000;
+        border-radius: 5px;
       }
 
       .login-button:hover {
         border: 0;
         text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-        background-color: #357ae8;
+        background-color: #FFFFFF;
+        border:1px solid #000000;
+        border-radius: 5px;
+        color:#000000;
       }
 
       .voucher {
@@ -125,13 +130,18 @@
         border: 0;
         color: #fff;
         text-shadow: 0 1px rgba(0, 0, 0, 0.1);
-        background-color: #4d90fe;
+        background-color: #000000;
+        border:1px solid #000000;
+        border-radius: 5px;
       }
 
       .voucher-button:hover {
         border: 0;
         text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-        background-color: #357ae8;
+        background-color: #FFFFFF;
+        border:1px solid #000000;
+        border-radius: 5px;
+        color:#000000;
       }
 
       .user {
@@ -149,13 +159,17 @@
         border: 0;
         color: #fff;
         text-shadow: 0 1px rgba(0, 0, 0, 0.1);
-        background-color: #4d90fe;
+        background-color: #000000;
+        border:1px solid #000000;
+        border-radius: 5px;
       }
 
       .user-button:hover {
-        border: 0;
         text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-        background-color: #357ae8;
+        background-color: #FFFFFF;
+        color:#000000;
+        border:1px solid #000000;
+        border-radius: 5px;
       }
 
       #form_voucher, #form_user {
@@ -217,22 +231,6 @@
         font-size: 14px;
       }
 
-      .error {
-        font-size: 14px;
-        font-family: Arial, sans-serif;
-        font-weight: 700;
-        height: 25px;
-        padding: 0 8px;
-        padding-top: 10px;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-        border: 0;
-        color: #fff;
-        text-shadow: 0 1px rgba(0, 0, 0, 0.1);
-        background-color: #ff1215;
-      }
-
       /*
       input[type="checkbox"] {
         -webkit-box-flex: 0;
@@ -243,6 +241,36 @@
         float: left;
       }
       */
+
+      .button-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap:5px;
+        margin-bottom:10px;
+      }
+
+      .button-container > * {
+        flex-grow:1;
+        flex-basis:0;
+      }
+
+      .logout {
+        font-size: 14px;
+        font-family: Arial, sans-serif;
+        font-weight: 600;
+        height: 25px;
+        padding: 0 8px;
+        padding-top: 10px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border: 0;
+        color: #000;
+        text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+        background-color: #FFDE05;
+      }
+
       @media screen and (max-width: 450px) {
         .login-card {
           width: 70% !important;
@@ -255,7 +283,7 @@
     </style>
     <script>
       setTimeout(function () {
-        document.getElementById("error").remove();
+        document.getElementById("logout").remove();
       }, 4000);
     </script>
   </head>
@@ -265,11 +293,14 @@
       <div class="login-card">
         <img src="captiveportal-logo.png" /><br />
         <h1></h1>
-        <p><a style="font-size:12px;opacity:1;color:#5EB220;font-weight:600;" href="captiveportal-price-to.html">⚡ Price</a></p>
-        <p><a style="font-size:12px;opacity:1;color:#d02952;font-weight:600;" href="captiveportal-how-to.html">⚡ Tutorial To Connect?</a></p>
+        <p><a style="font-size:12px;opacity:1;color:#000000;font-weight:600;" href="captiveportal-price-to.html">⚡ Price</a></p>
+        <p><a style="font-size:12px;opacity:1;color:#000000;font-weight:600;" href="captiveportal-how-to.html">⚡ Tutorial To Connect?</a></p>
         <p style="font-size:12px;">🚧 Login <i>with:</i> </p>
-        <button id="button_voucher" class="voucher voucher-button">Voucher</button>
-        <button id="button_user" class="user user-button">Account</button>
+        <p class="logout" id="logout">Succeded Logout.</p>
+        <div class="button-container">
+                <button id="button_voucher" class="voucher voucher-button">Voucher</button>
+                <button id="button_user" class="user user-button">Account</button>
+        </div>
         <script>
                 const btn_voucher = document.getElementById('button_voucher');
                 const btn_user = document.getElementById('button_user');
@@ -340,8 +371,8 @@
           />
         </form>
         </div>
-        <p class="error" id="error">Your were logged out.</p>
-        <div class="footer">Welcome <i>to</i> &#9829; <b>Phoebe-id</b></div>
+
+        <div class="footer">Welcome <i>to</i> <b style="color:#FFDE05">&#9829;</b> <b>Phoebe-id</b></div>
       </div>
     </div>
   </body>
