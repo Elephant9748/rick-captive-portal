@@ -28,8 +28,7 @@
 
       #content {
         font-family: "Source Sans Pro", sans-serif;
-        background: url(captiveportal-background.png) center center no-repeat
-          fixed;
+        background: url(assets/content-background.png) top right no-repeat fixed;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
@@ -40,10 +39,10 @@
       .login-card {
         padding: 40px;
         width: 274px;
-        background-color: #FFFFFF;
+        background-color: #ffffff;
         margin: 0 auto 10px;
         border-radius: 2px;
-        box-shadow: 0 5px 10px  rgba(0, 0, 0, 0.12);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
         overflow: hidden;
       }
       .login-card h1 {
@@ -102,17 +101,17 @@
         color: #fff;
         text-shadow: 0 1px rgba(0, 0, 0, 0.1);
         background-color: #000000;
-        border:1px solid #000000;
+        border: 1px solid #000000;
         border-radius: 5px;
       }
 
       .login-button:hover {
         border: 0;
         text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-        background-color: #FFFFFF;
-        border:1px solid #000000;
+        background-color: #ffffff;
+        border: 1px solid #000000;
         border-radius: 5px;
-        color:#000000;
+        color: #000000;
       }
 
       .voucher {
@@ -131,17 +130,17 @@
         color: #fff;
         text-shadow: 0 1px rgba(0, 0, 0, 0.1);
         background-color: #000000;
-        border:1px solid #000000;
+        border: 1px solid #000000;
         border-radius: 5px;
       }
 
       .voucher-button:hover {
         border: 0;
         text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-        background-color: #FFFFFF;
-        border:1px solid #000000;
+        background-color: #ffffff;
+        border: 1px solid #000000;
         border-radius: 5px;
-        color:#000000;
+        color: #000000;
       }
 
       .user {
@@ -160,19 +159,20 @@
         color: #fff;
         text-shadow: 0 1px rgba(0, 0, 0, 0.1);
         background-color: #000000;
-        border:1px solid #000000;
+        border: 1px solid #000000;
         border-radius: 5px;
       }
 
       .user-button:hover {
         text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-        background-color: #FFFFFF;
-        color:#000000;
-        border:1px solid #000000;
+        background-color: #ffffff;
+        color: #000000;
+        border: 1px solid #000000;
         border-radius: 5px;
       }
 
-      #form_voucher, #form_user {
+      #form_voucher,
+      #form_user {
         display: none;
       }
 
@@ -246,13 +246,13 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        gap:5px;
-        margin-bottom:10px;
+        gap: 5px;
+        margin-bottom: 10px;
       }
 
       .button-container > * {
-        flex-grow:1;
-        flex-basis:0;
+        flex-grow: 1;
+        flex-basis: 0;
       }
 
       @media screen and (max-width: 450px) {
@@ -270,87 +270,119 @@
   <body>
     <div id="content">
       <div class="login-card">
-        <img src="captiveportal-logo.png" /><br />
+        <img src="assets/logo.png" /><br />
         <h1></h1>
-        <p><a style="font-size:12px;opacity:1;color:#000000;font-weight:600;" href="captiveportal-price-to.html">⚡ Price</a></p>
-        <p><a style="font-size:12px;opacity:1;color:#000000;font-weight:600;" href="captiveportal-how-to.html">⚡ Tutorial To Connect?</a></p>
-        <p style="font-size:12px;">🚧 Login <i>with:</i> </p>
+        <p>
+          <a
+            style="
+              font-size: 12px;
+              opacity: 1;
+              color: #000000;
+              font-weight: 600;
+            "
+            href="captiveportal-price-to.html"
+            >⚡ Price</a
+          >
+        </p>
+        <p>
+          <a
+            style="
+              font-size: 12px;
+              opacity: 1;
+              color: #000000;
+              font-weight: 600;
+            "
+            href="captiveportal-how-to.html"
+            >⚡ Tutorial To Connect?</a
+          >
+        </p>
+        <p style="font-size: 12px">🚧 Login <i>with:</i></p>
         <div class="button-container">
-                <button id="button_voucher" class="voucher voucher-button">Voucher</button>
-                <button id="button_user" class="user user-button">Account</button>
+          <button id="button_voucher" class="voucher voucher-button">
+            Voucher
+          </button>
+          <button id="button_user" class="user user-button">Account</button>
         </div>
         <script>
-                const btn_voucher = document.getElementById('button_voucher');
-                const btn_user = document.getElementById('button_user');
+          const btn_voucher = document.getElementById("button_voucher");
+          const btn_user = document.getElementById("button_user");
 
-                btn_voucher.addEventListener('click', () => {
-                        const state = document.getElementById('form_voucher');
-                        const state2 = document.getElementById('form_user');
-                        if (state.style.display === 'block') {
-                                state.style.display = 'none';
-                                state2.style.display = 'block';
-                        } else {
-                                state.style.display = 'block';
-                                state2.style.display = 'none';
-                        }
-                });
-                btn_user.addEventListener('click', () => {
-                        const state = document.getElementById('form_user');
-                        const state2 = document.getElementById('form_voucher');
-                        if (state.style.display === 'block') {
-                                state.style.display = 'none';
-                                state2.style.display = 'block';
-                        } else {
-                                state.style.display = 'block';
-                                state2.style.display = 'none';
-                        }
-                });
+          btn_voucher.addEventListener("click", () => {
+            const state = document.getElementById("form_voucher");
+            const state2 = document.getElementById("form_user");
+            if (state.style.display === "block") {
+              state.style.display = "none";
+              state2.style.display = "block";
+            } else {
+              state.style.display = "block";
+              state2.style.display = "none";
+            }
+          });
+          btn_user.addEventListener("click", () => {
+            const state = document.getElementById("form_user");
+            const state2 = document.getElementById("form_voucher");
+            if (state.style.display === "block") {
+              state.style.display = "none";
+              state2.style.display = "block";
+            } else {
+              state.style.display = "block";
+              state2.style.display = "none";
+            }
+          });
         </script>
-        <div><br></div>
+        <div><br /></div>
 
         <div id="form_user">
-        <form name="login_form" method="post" action="$PORTAL_ACTION$">
-          <input
-            type="text"
-            name="auth_user"
-            placeholder="User"
-            id="auth_user"
-          />
-          <input
-            type="password"
-            name="auth_pass"
-            placeholder="Password"
-            id="auth_pass"
-          />
-         <input name="redirurl" type="hidden" value="$PORTAL_REDIRURL$" />
-         <!-- <input id="auth_voucher" name="auth_voucher" type="text" placeholder="Voucher"> -->
-         <input name="zone" type="hidden" value="$PORTAL_ZONE$">
-          <input
-            type="submit"
-            name="accept"
-            class="login login-button"
-            value="Login"
-            id="login"
-          />
-        </form>
+          <form name="login_form" method="post" action="$PORTAL_ACTION$">
+            <input
+              type="text"
+              name="auth_user"
+              placeholder="User"
+              id="auth_user"
+            />
+            <input
+              type="password"
+              name="auth_pass"
+              placeholder="Password"
+              id="auth_pass"
+            />
+            <input name="redirurl" type="hidden" value="$PORTAL_REDIRURL$" />
+            <!-- <input id="auth_voucher" name="auth_voucher" type="text" placeholder="Voucher"> -->
+            <input name="zone" type="hidden" value="$PORTAL_ZONE$" />
+            <input
+              type="submit"
+              name="accept"
+              class="login login-button"
+              value="Login"
+              id="login"
+            />
+          </form>
         </div>
 
         <div id="form_voucher">
-        <form name="login_form" method="post" action="$PORTAL_ACTION$">
-         <input name="redirurl" type="hidden" value="$PORTAL_REDIRURL$" />
-         <input id="auth_voucher" name="auth_voucher" type="text" placeholder="Voucher">
-         <input name="zone" type="hidden" value="$PORTAL_ZONE$">
-          <input
-            type="submit"
-            name="accept"
-            class="login login-button"
-            value="Login"
-            id="login"
-          />
-        </form>
+          <form name="login_form" method="post" action="$PORTAL_ACTION$">
+            <input name="redirurl" type="hidden" value="$PORTAL_REDIRURL$" />
+            <input
+              id="auth_voucher"
+              name="auth_voucher"
+              type="text"
+              placeholder="Voucher"
+            />
+            <input name="zone" type="hidden" value="$PORTAL_ZONE$" />
+            <input
+              type="submit"
+              name="accept"
+              class="login login-button"
+              value="Login"
+              id="login"
+            />
+          </form>
         </div>
 
-        <div class="footer">Welcome <i>to</i> <b style="color:#FFDE05">&#9829;</b> <b>Phoebe-id</b></div>
+        <div class="footer">
+          Welcome <i>to</i> <b style="color: #ffde05">&#9829;</b>
+          <b>Phoebe-id</b>
+        </div>
       </div>
     </div>
   </body>
